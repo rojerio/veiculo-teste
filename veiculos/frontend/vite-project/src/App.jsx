@@ -8,7 +8,8 @@ const App = () => {
     placa: '',
     marca: '',
     modelo: '',
-    ano: ''
+    ano: '',
+    custo: ''
   }); // Declara um estado para os dados do formulário
   const [isEditing, setIsEditing] = useState(false); // Declara um estado para controlar se estamos editando ou criando
 
@@ -38,7 +39,8 @@ const App = () => {
         placa: '',
         marca: '',
         modelo: '',
-        ano: ''
+        ano: '',
+        custo: ''
       }); // Reseta os campos do formulário
       fetchVeiculos(); // Recarrega a lista de veículos
     } catch (error) {
@@ -54,7 +56,8 @@ const App = () => {
         placa: '',
         marca: '',
         modelo: '',
-        ano: ''
+        ano: '',
+        custo: ''
       }); // Reseta os campos do formulário
       setIsEditing(false); // Define que não estamos mais editando
       fetchVeiculos(); // Recarrega a lista de veículos
@@ -77,7 +80,8 @@ const App = () => {
       placa: veiculo.placa,
       marca: veiculo.marca,
       modelo: veiculo.modelo,
-      ano: veiculo.ano
+      ano: veiculo.ano,
+      custo: veiculo.custo
     }); // Preenche o formulário com os dados do veículo a ser editado
     setIsEditing(true); // Define que estamos editando
   };
@@ -123,13 +127,22 @@ const App = () => {
             onChange={handleInputChange}
           />
         </label>
+        <label>
+          custo:
+          <input
+            type="text"
+            name="custo"
+            value={formData.custo}
+            onChange={handleInputChange}
+          />
+        </label>
         <button type="submit">{isEditing ? 'Atualizar' : 'Cadastrar'}</button> {/* Botão de envio do formulário */}
       </form>
 
       <ul>
         {veiculos.map(veiculo => (
           <li key={veiculo.placa}>
-            {veiculo.placa} - {veiculo.marca} - {veiculo.modelo} - {veiculo.ano}
+            {veiculo.placa} - {veiculo.marca} - {veiculo.modelo} - {veiculo.ano} - {veiculo.custo}
             <button onClick={() => handleEditVeiculo(veiculo)}>Editar</button> {/* Botão para editar veículo */}
             <button onClick={() => handleDeleteVeiculos(veiculo.placa)}>Excluir</button> {/* Botão para excluir veículo */}
           </li>

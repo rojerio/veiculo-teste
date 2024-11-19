@@ -1,111 +1,108 @@
-/* Resetando alguns estilos padrões */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* App.css */
 
-/* Definindo um fundo claro e uma fonte básica */
+/* Estilização geral */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
   color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-/* Container principal */
-div {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 600px;
-}
-
-/* Título */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #2c3e50;
+  color: #555;
+  margin-top: 20px;
 }
 
-/* Estilo do formulário */
+/* Estilização do formulário */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-label {
+form label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
-  margin-bottom: 5px;
+  color: #444;
 }
 
-input {
-  padding: 8px;
+form input {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
-input:focus {
-  border-color: #3498db;
-  outline: none;
-}
-
-button {
-  padding: 10px 15px;
-  background-color: #3498db;
-  color: white;
+form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #2980b9;
+form button:hover {
+  background-color: #0056b3;
 }
 
-/* Lista de veículos */
+/* Estilização da lista de veículos */
 ul {
-  list-style-type: none;
-  margin-top: 30px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0;
+  list-style: none;
 }
 
-li {
+ul li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ecf0f1;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  padding: 5px 10px;
+ul li button {
   margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:nth-child(1) {
-  background-color: #27ae60;
+ul li button:first-of-type {
+  background-color: #ffc107;
+  color: #fff;
 }
 
-button:nth-child(2) {
-  background-color: #e74c3c;
+ul li button:first-of-type:hover {
+  background-color: #e0a800;
 }
 
-button:nth-child(1):hover {
-  background-color: #2ecc71;
+ul li button:last-of-type {
+  background-color: #dc3545;
+  color: #fff;
 }
 
-button:nth-child(2):hover {
-  background-color: #c0392b;
+ul li button:last-of-type:hover {
+  background-color: #c82333;
 }

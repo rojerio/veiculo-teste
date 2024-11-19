@@ -30,8 +30,8 @@ app.get('/veiculos/:placa', (req, res) => {
 
 // Rota para cadastrar um novo veículo
 app.post('/veiculos', (req, res) => {
-    const { placa, marca, modelo, ano } = req.body;
-    const veiculo = { placa, marca, modelo, ano };
+    const { placa, marca, modelo, ano, custo } = req.body;
+    const veiculo = { placa, marca, modelo, ano, custo };
     veiculos.push(veiculo);
     res.status(201).json({ message: 'Veículo cadastrado com sucesso.' });
 });
@@ -39,12 +39,13 @@ app.post('/veiculos', (req, res) => {
 // Rota para atualizar as informações de um veículo
 app.put('/veiculos/:placa', (req, res) => {
     const { placa } = req.params;
-    const { marca, modelo, ano } = req.body;
+    const { marca, modelo, ano, custo } = req.body;
     const veiculo = veiculos.find(v => v.placa === placa);
     if (veiculo) {
         veiculo.marca = marca || veiculo.marca;
         veiculo.modelo = modelo || veiculo.modelo;
         veiculo.ano = ano || veiculo.ano;
+        veiculo.custo = custo || veiculo.custo;
         res.json({ message: 'Informações do veículo atualizadas com sucesso.' });
     } else {
         res.status(404).json({ message: 'Veículo não encontrado.' });
